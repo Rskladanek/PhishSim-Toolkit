@@ -31,7 +31,7 @@ project/
 ## Fake Login Page Preview
 Below is an image preview of the current `index.html`, which mimics the Facebook login page for testing:
 
-![Fake Facebook Login](image.png)
+![Fake Facebook Login](imgs/image.png)
 
 The login page collects entered credentials for **testing only**.
 
@@ -73,7 +73,7 @@ The login page collects entered credentials for **testing only**.
 
 2. **Install Required Libraries**
    ```bash
-   pip -r requirements.txt
+   pip install -r requirements.txt
    ```
 
 3. **Run the Fake Website**
@@ -104,7 +104,7 @@ The login page collects entered credentials for **testing only**.
 ## Status
 - ✅ Project structure and setup defined.
 - ✅ Basic phishing page implemented.
-- ✅ Email spoofing script functional.
+- ❌ Email spoofing script functional.
 - 🔧 Further testing and refinement ongoing.
 
 ---
