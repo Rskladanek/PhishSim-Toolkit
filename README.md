@@ -35,100 +35,118 @@ Below is an image preview of the current `index.html`, which mimics the Facebook
 
 The login page collects entered credentials for **testing only**.
 
----
 
-## Goals
+## Features
 
-### 1. Develop a Fake Phishing Website
-- Clone the appearance of a legitimate login page.
-- Capture and log credentials entered into the form.
-- Serve the page locally using Flask.
+### 1. Fake Phishing Webpage
+- **Clone-like Interface**: The `index.html` mimics a Facebook login page.
+- **Credential Logging**: Credentials entered on the page are captured and stored locally in `logins.txt` for testing and awareness only.
+- **Local Hosting**: Easily served with Flask, allowing you to analyze phishing behavior in a contained environment.
 
-### 2. Implement Email Spoofing Script
-- Send emails that appear to originate from trusted sources.
-- Use Python's `smtplib` library to send spoofed messages.
-- Include HTML body with phishing links.
+### 2. Email Spoofing (Testing)
+- **Fake Emails**: Send emails that appear to come from reputable sources.
+- **HTML Content**: Customize emails with HTML to simulate real phishing campaigns.
+- **Local SMTP Debug**: Utilize a local SMTP debugging server to test and view the message output without sending actual emails to real users.
 
-### 3. Create an Ethical Framework
-- Clearly outline **legal boundaries** and **ethical considerations**.
-- Ensure written consent from targets before testing.
-- Provide disclaimers in both project files and documentation.
+### 3. Ethical Emphasis
+- **Clear Disclaimers**: The project provides explicit warnings against unauthorized usage.
+- **Controlled Testing**: Intended for professionals to test their defensive strategies and raise security awareness among trained participants.
 
 ---
 
-## Installation and Setup
+## Getting Started
 
 ### Prerequisites
-- Python 3.x installed
-- Flask
-- SMTP server (local or external)
-- Ngrok (for exposing local servers to the internet)
+- **Python 3.x**
+- **Flask** for serving the phishing page
+- **Local SMTP Debugging Server** (optional, for testing email functionality)
+- **Ngrok** (optional, to expose local server externally if needed)
 
-### Steps
+### Installation
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/phishing-simulation.git
+   git clone https://github.com/Rskladanek/PhishSim-Toolkit/
    cd phishing-simulation
    ```
 
-2. **Install Required Libraries**
+2. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Run the Fake Website**
+3. **Run the Phishing Website**
    ```bash
    python3 modules/app.py
    ```
-   The website will be served locally at `http://127.0.0.1:5000`.
+   Access the site locally at: `http://127.0.0.1:5000`
 
+4. **Send Test Emails (Local Testing)**
+   > Note: The included `send_email.py` script is configured to work with a local SMTP debugging server. This allows you to test the appearance and structure of spoofed emails without delivering them to real inboxes.
 
-4. **Send Test Emails**
-   NOT WORKING YET
+   - **Start a Local SMTP Debugging Server**
+     In a separate terminal, run:
+     ```bash
+     python3 -m smtpd -c DebuggingServer -n localhost:1025
+     ```
+     This will display any received emails on the terminal without sending them.
 
-5. **Test the Workflow**
-   - Use Ngrok to expose your Flask server online.
-   - Test the fake login page and email delivery.
+   - **Send a Test Email**
+     ```bash
+     python3 modules/send_email.py
+     ```
+     You should see the email output in the SMTP debugging server’s terminal.
+
+5. **Test the Full Workflow**
+   - **Set up Ngrok (Optional)**
+     If you want to test the phishing page externally (e.g., from another device), use Ngrok:
+     ```bash
+     ngrok http 5000
+     ```
+     Ngrok will provide a public URL that tunnels to your local server.
+
+   - **Check the Fake Login Page**
+     Visit the Ngrok URL or `http://127.0.0.1:5000` locally.
+     Enter credentials to see them logged in `logins.txt` (test environment only).
+
+   - **Review the Logged Credentials**
+     Open `logins.txt` to see the captured data and understand how phishing works.
 
 ---
 
 ## Legal and Ethical Considerations
-**Warning:** This project is for **educational and ethical security testing** purposes only. Unauthorized usage is strictly prohibited.
+- **For Educational Use Only**: Never use this tool without explicit written consent from all relevant parties.
+- **Comply with Laws**: Familiarize yourself with applicable laws and regulations.
+- **Respect Privacy**: Do not capture, store, or share real credentials without authorization.
 
-- **Consent:** Obtain explicit written consent before performing any tests.
-- **Legality:** Ensure all actions comply with local and international laws.
-- **Usage:** The project is intended to raise awareness about phishing threats.
-
----
-
-## Status
-- ✅ Project structure and setup defined.
-- ✅ Basic phishing page implemented.
-- ❌ Email spoofing script functional.
-- 🔧 Further testing and refinement ongoing.
+> **If in doubt, do not use this tool.**
 
 ---
 
-## Preview
-**Index.html** (Fake Facebook Login):
-- Serves as the fake phishing page.
+## Status and Next Steps
 
-### Screenshot
-![Phishing Login Page](obraz.png)
+### Current Status:
+- ✅ Basic phishing page: Implemented
+- ✅ Email spoofing script: Test environment ready (no real delivery)
 
----
-
-## Next Steps
-1. Improve the fake login page's responsiveness and UI accuracy.
-2. Add logging mechanisms to store captured credentials securely.
-3. Refine the email spoofing script with additional customization.
+### Next Steps:
+1. Enhance UI/UX of the phishing page.
+2. Add additional logging and security features.
+3. Integrate a real SMTP solution with necessary authentication (if ethically permissible).
 
 ---
 
-## Contributing
-Feel free to submit pull requests or report issues to enhance the project.
+## Contributions
+Contributions are welcome to improve the code, documentation, and security features. Please open an issue or submit a pull request.
 
 ---
 
-### Disclaimer
-This project should **never be used for malicious purposes**. Always prioritize ethical considerations and legal compliance when using or testing this tool.
+## Download
+You can clone the repository directly from GitHub:
+```bash
+git clone https://github.com/your-username/phishing-simulation.git
+```
+
+---
+
+## Final Disclaimer
+Use of this project is at your own risk. This is intended solely for legitimate and ethical security testing, research, and educational purposes.
