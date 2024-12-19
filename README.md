@@ -1,4 +1,3 @@
-
 # Phishing Simulation Project
 
 ## Overview
@@ -22,7 +21,7 @@ project/
 ├── main.py              # Entry point for running the project
 ├── logins.txt           # File for storing captured credentials (for testing purposes only)
 ├── README.md            # Project documentation
-├── requirements.txt     # requirements for the project
+├── requirements.txt     # Requirements for the project
 └── .gitignore           # Ignored files
 ```
 
@@ -76,7 +75,7 @@ The login page collects entered credentials for **testing only**.
 
 3. **Run the Phishing Website**
    ```bash
-   python3 modules/app.py
+   python3 main.py
    ```
    Access the site locally at: `http://127.0.0.1:5000`
 
@@ -143,7 +142,7 @@ Contributions are welcome to improve the code, documentation, and security featu
 ## Download
 You can clone the repository directly from GitHub:
 ```bash
-git clone https://github.com/your-username/phishing-simulation.git
+git clone https://github.com/Rskladanek/PhishSim-Toolkit.git
 ```
 
 ---
